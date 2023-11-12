@@ -1,0 +1,82 @@
+from task import task
+import timer
+from RM import RM
+
+
+class simulation:
+
+    def __init__(self, file_path, schedule_tool):
+        self.__load_file(file_path= file_path)
+        self.clock_start_time = 1
+        self.schedule_tool = schedule_tool
+
+    def __load_file(self, file_path):
+        
+        tid = 1
+        self.all_tasks = []
+        with open(file_path, "r") as f: 
+            for raw_task in f.readlines():
+                phase_time, period, relative_deadline, execution_time = raw_task.split(",") 
+                ea_task = task(phase_time= phase_time, period= period.strip(), 
+                    relative_deadline= relative_deadline.strip(), 
+                    execution_time= execution_time.strip(), tid= tid)
+                self.all_tasks.append(ea_task)
+                tid += 1
+        
+        self.__get_lcd_task_period()
+        self.__get_max_phase_time()
+        self.all_tasks_phase_time = [ea_task.phase_time for ea_task in self.all_tasks]
+        self.all_tasks_period = [ea_task.period for ea_task in self.all_tasks]
+
+    def check_schedulability(self):
+        return self.schedule_tool.schedulability_test(all_tasks = self.all_tasks)
+    
+    def __gcd(self, a, b):
+        if a < b:
+            a , b = b, a
+        return b if a % b == 0 else self.__gcd(b, a // b)
+
+    def __get_lcd_task_period(self):
+        
+        self.lcd_period = self.all_tasks[0].period
+        mutli_period = 1
+        for ea_task in self.all_tasks:
+            mutli_period *= ea_task.period
+            gcd_period = self.__gcd(self.lcd_period, ea_task.period)
+            self.lcd_period = mutli_period / gcd_period
+
+    def __get_max_phase_time(self):
+
+        self.max_phase_time = -1
+        for ea_task in self.all_tasks:
+            self.max_phase_time = max(self.max_phase_time, ea_task.phase_time)
+        
+        return self.max_phase_time
+
+    def simulate(self):
+        
+        clock = self.clock_start_time 
+        while clock < self.lcd_period + self.max_phase_time:
+            # update current_time to schedule tool
+            self.schedule_tool.update_time(current_time = clock)
+            for idx in range(len(self.all_tasks)):
+                if (clock - self.all_tasks_phase_time[idx]) % self.all_tasks_period[idx] == 0:
+                    self.schedule_tool.get_new_task(task = self.all_tasks[idx])
+
+
+            self.schedule_tool.check_preemptive_job()
+            self.schedule_tool.check_execution_phase()
+
+            clock += 1
+
+    def print_record(self):
+        self.schedule_tool.print_record()
+
+if __name__ == "__main__":
+    file_path = "./hw1/testcase/test1.txt"
+    simulator = simulation(file_path= file_path, schedule_tool= RM())
+    if simulator.check_schedulability():
+        simulator.simulate()
+        simulator.print_record()
+
+    
