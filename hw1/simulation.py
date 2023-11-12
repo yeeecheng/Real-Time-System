@@ -1,7 +1,9 @@
-from task import task
+from shedule_tool.task import task
 import timer
-from RM import RM
-
+from shedule_tool.RM import RM 
+from shedule_tool.EDF import EDF 
+from shedule_tool.strictSLT import strictSLT
+import os
 
 class simulation:
 
@@ -9,6 +11,7 @@ class simulation:
         self.__load_file(file_path= file_path)
         self.clock_start_time = 1
         self.schedule_tool = schedule_tool
+        self.schedule_tool.reset()
 
     def __load_file(self, file_path):
         
@@ -29,22 +32,24 @@ class simulation:
         self.all_tasks_period = [ea_task.period for ea_task in self.all_tasks]
 
     def check_schedulability(self):
+        print(self.schedule_tool)
         return self.schedule_tool.schedulability_test(all_tasks = self.all_tasks)
     
     def __gcd(self, a, b):
         if a < b:
             a , b = b, a
-        return b if a % b == 0 else self.__gcd(b, a // b)
+        return b if a % b == 0 else self.__gcd(b, a % b)
 
     def __get_lcd_task_period(self):
         
         self.lcd_period = self.all_tasks[0].period
-        mutli_period = 1
-        for ea_task in self.all_tasks:
-            mutli_period *= ea_task.period
-            gcd_period = self.__gcd(self.lcd_period, ea_task.period)
+        mutli_period = self.lcd_period
+        for idx in range(1, len(self.all_tasks)):
+            mutli_period *= self.all_tasks[idx].period
+            gcd_period = self.__gcd(self.lcd_period, self.all_tasks[idx].period)
             self.lcd_period = mutli_period / gcd_period
 
+        # print("period: ", self.lcd_period)
     def __get_max_phase_time(self):
 
         self.max_phase_time = -1
@@ -69,14 +74,21 @@ class simulation:
 
             clock += 1
 
-    def print_record(self):
-        self.schedule_tool.print_record()
+    def print_record(self, save_path):
+        self.schedule_tool.print_record(save_path = save_path)
+
+
 
 if __name__ == "__main__":
-    file_path = "./hw1/testcase/test1.txt"
-    simulator = simulation(file_path= file_path, schedule_tool= RM())
-    if simulator.check_schedulability():
-        simulator.simulate()
-        simulator.print_record()
+    file_path = "./hw1/testcase"
+    run = [[ RM(), "RM"], [EDF(), "EDF"], [strictSLT(), "strictSLT"]]
+    for file in os.listdir(file_path):
+        # file = "test1.txt"
+        for schedule, file_name in run:
+            simulator = simulation(file_path= file_path + "/"  + file, schedule_tool= schedule)
+            
+            if simulator.check_schedulability():
+                simulator.simulate()
+                simulator.print_record(save_path= f"./hw1/testcase_res/{file_name}/{file}")
 
     

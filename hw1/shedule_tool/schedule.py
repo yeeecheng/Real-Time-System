@@ -1,4 +1,4 @@
-from task import job, task
+from .task import job, task
 
 class schedule:
     """ smaller period, higher priority """
@@ -11,6 +11,18 @@ class schedule:
         self.current_time = 0
         self.record_schedule = []
     
+    def reset(self):
+        self.ready_queue = list()
+        self.total_job_num = 0
+        self.miss_deadline_job = 0
+        self.locker = False
+        self.current_time = 0
+        self.record_schedule = []
+        try:
+            del self.current_exec_job
+        except:
+            pass
+
     def check_current_exec_job_state(self):
         self.current_exec_job.update_remain_execution_time()
         # executive time is over
@@ -28,8 +40,8 @@ class schedule:
             self.ready_queue.pop(0)
 
             # check whether the first time into execution phase
-            if self.current_exec_job.release_time == None:
-                self.current_exec_job.set_job(release_time= self.current_time)
+            # if self.current_exec_job.release_time == None:
+            #     self.current_exec_job.set_job(release_time= self.current_time)
 
             # check whether there is enough time to execute
             if (self.current_exec_job.absolute_deadline - self.current_time - self.current_exec_job.remain_execution_time) < 0:
@@ -49,7 +61,7 @@ class schedule:
                 self.locker = False
                 del self.current_exec_job
 
-
+    # diff
     def check_preemptive_job(self):
         try:
             # preemptive
@@ -78,7 +90,9 @@ class schedule:
 
     def get_new_task(self, task):
         self.total_job_num += 1
-        self.__check_priority_order_ready_queue(ea_job= job(task= task, current_time= self.current_time))
+        ea_job = job(task= task, current_time= self.current_time)
+        ea_job.set_job(release_time= self.current_time)
+        self.__check_priority_order_ready_queue(ea_job= ea_job)
 
     # diff
     def schedulability_test(self, all_tasks):
@@ -112,6 +126,11 @@ class schedule:
         print("\n")
         
 
-    def print_record(self):
+    def print_record(self, save_path = None):
+        data = ""
         for record in self.record_schedule:
             print(f"{record[0]} {record[1]}")
+            data += f"{record[0]} {record[1]}\n"
+
+        with open(save_path, "w", encoding= "utf-8") as f:
+            f.write(data)
