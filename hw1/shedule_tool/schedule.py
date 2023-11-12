@@ -45,7 +45,7 @@ class schedule:
 
             # check whether there is enough time to execute
             if (self.current_exec_job.absolute_deadline - self.current_time - self.current_exec_job.remain_execution_time) < 0:
-                print("Missing schedule")
+                self.record_schedule.append([self.current_time, f"T{self.current_exec_job.task.tid} Missing schedule"])
                 self.miss_deadline_job += 1
                 del self.current_exec_job
                 return 
