@@ -11,21 +11,21 @@ class strictSLT(schedule):
             # preemptive
             x = self.get_current_high_priority_job()
             y = self.current_exec_job
-            if (x.absolute_deadline - x.remain_execution_time - x.task.execution_time) < (y.absolute_deadline - y.remain_execution_time - y.task.execution_time):
+            if (x.absolute_deadline - self.current_time - x.remain_execution_time) < (y.absolute_deadline - self.current_time -  y.remain_execution_time):
                 self.__check_priority_order_ready_queue(ea_job= self.current_exec_job)
                 self.locker = False
         except:
             pass
     
     def get_current_high_priority_job(self):
-        self.ready_queue = sorted(self.ready_queue, key= lambda x: [(x.absolute_deadline - x.remain_execution_time - x.task.execution_time), x.arrived_time])
+        self.ready_queue = sorted(self.ready_queue, key= lambda x: [(x.absolute_deadline - self.current_time - x.task.execution_time), x.arrived_time])
         return self.ready_queue[0]
     
     def __check_priority_order_ready_queue(self, ea_job):
 
         self.ready_queue.append(ea_job)
         # sorted according to relative time & arrived time of task
-        self.ready_queue = sorted(self.ready_queue, key= lambda x: [(x.absolute_deadline - x.remain_execution_time - x.task.execution_time), x.arrived_time])
+        self.ready_queue = sorted(self.ready_queue, key= lambda x: [(x.absolute_deadline - self.current_time - x.task.execution_time), x.arrived_time])
     
     def dashboard(self):
 
@@ -34,7 +34,7 @@ class strictSLT(schedule):
         print(f"miss deadline job num: {self.miss_deadline_job}")
         print(f"\nReady queue:")
         for idx, ea_job in enumerate(self.ready_queue):
-            print(f"{idx}. tid: {ea_job.task.tid}, arrived_time: {ea_job.arrived_time}, slack: {(ea_job.absolute_deadline - self.current_time - ea_job.task.execution_time)}")
+            print(f"{idx}. tid: {ea_job.task.tid}, arrived_time: {ea_job.arrived_time}, slack: {(ea_job.absolute_deadline - self.current_time - ea_job.remain_execution_time)}")
         print("\ncurrent execution job: ", end ="")
         try:
             cur_exec_job = self.current_exec_job
