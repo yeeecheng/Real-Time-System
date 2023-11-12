@@ -44,6 +44,7 @@ class schedule:
                 self.record_schedule.append([self.current_time, f"T{self.current_exec_job.task.tid} Missing schedule"])
                 self.miss_deadline_job += 1
                 del self.current_exec_job
+                self.check_execution_phase()
                 return 
             
             self.locker = True
