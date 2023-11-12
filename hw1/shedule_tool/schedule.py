@@ -115,9 +115,9 @@ class schedule:
         print("\ncurrent execution job: ", end ="")
         try:
             cur_exec_job = self.current_exec_job
-            print(f"\ntid: {cur_exec_job.task.tid}")
-            print(f"release_time: {cur_exec_job.release_time}")
-            print(f"absolute_deadline: {cur_exec_job.absolute_deadline}")
+            print(f"\ntid: {cur_exec_job.task.tid}", end =", ")
+            print(f"release_time: {cur_exec_job.release_time}", end =", ")
+            print(f"absolute_deadline: {cur_exec_job.absolute_deadline}", end =", ")
             print(f"remain_execute_time: {cur_exec_job.remain_execution_time}")
             self.record_schedule.append([self.current_time, f"T{cur_exec_job.task.tid}"])
         except:

@@ -85,10 +85,11 @@ if __name__ == "__main__":
     for file in os.listdir(file_path):
         # file = "test1.txt"
         for schedule, file_name in run:
+            # schedule = EDF()
             simulator = simulation(file_path= file_path + "/"  + file, schedule_tool= schedule)
             
             if simulator.check_schedulability():
                 simulator.simulate()
                 simulator.print_record(save_path= f"./hw1/testcase_res/{file_name}/{file}")
-
+            
     

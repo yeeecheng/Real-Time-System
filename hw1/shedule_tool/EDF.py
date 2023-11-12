@@ -6,6 +6,19 @@ class EDF(schedule):
         
         super().__init__()
 
+    def check_preemptive_job(self):
+        try:
+            # preemptive
+            if self.get_current_high_priority_job().absolute_deadline < self.current_exec_job.absolute_deadline:
+                self.__check_priority_order_ready_queue(ea_job= self.current_exec_job)
+                self.locker = False
+        except:
+            pass
+    
+    def get_current_high_priority_job(self):
+        self.ready_queue = sorted(self.ready_queue, key= lambda x: [x.absolute_deadline, x.arrived_time])
+        return self.ready_queue[0]
+    
     def __check_priority_order_ready_queue(self, ea_job):
 
         self.ready_queue.append(ea_job)
@@ -31,9 +44,10 @@ class EDF(schedule):
         print("\ncurrent execution job: ", end ="")
         try:
             cur_exec_job = self.current_exec_job
-            print(f"\ntid: {cur_exec_job.task.tid}")
-            print(f"release_time: {cur_exec_job.release_time}")
-            print(f"absolute_deadline: {cur_exec_job.absolute_deadline}")
+            print(f"\ntid: {cur_exec_job.task.tid}", end =", ")
+            print(f"arrived_time: {cur_exec_job.arrived_time}", end =", ")
+            print(f"release_time: {cur_exec_job.release_time}", end =", ")
+            print(f"absolute_deadline: {cur_exec_job.absolute_deadline}", end =", ")
             print(f"remain_execute_time: {cur_exec_job.remain_execution_time}")
             self.record_schedule.append([self.current_time, f"T{cur_exec_job.task.tid}"])
         except:

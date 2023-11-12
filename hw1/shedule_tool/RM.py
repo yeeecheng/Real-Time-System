@@ -6,6 +6,10 @@ class RM(schedule):
         
         super().__init__()
 
+    def get_current_high_priority_job(self):
+        self.ready_queue = sorted(self.ready_queue, key= lambda x: [x.task.period, x.arrived_time])
+        return self.ready_queue[0]
+    
     def __check_priority_order_ready_queue(self, ea_job):
 
         self.ready_queue.append(ea_job)

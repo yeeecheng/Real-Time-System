@@ -6,11 +6,26 @@ class strictSLT(schedule):
         
         super().__init__()
 
+    def check_preemptive_job(self):
+        try:
+            # preemptive
+            x = self.get_current_high_priority_job()
+            y = self.current_exec_job
+            if (x.absolute_deadline - x.remain_execution_time - x.task.execution_time) < (y.absolute_deadline - y.remain_execution_time - y.task.execution_time):
+                self.__check_priority_order_ready_queue(ea_job= self.current_exec_job)
+                self.locker = False
+        except:
+            pass
+    
+    def get_current_high_priority_job(self):
+        self.ready_queue = sorted(self.ready_queue, key= lambda x: [(x.absolute_deadline - x.remain_execution_time - x.task.execution_time), x.arrived_time])
+        return self.ready_queue[0]
+    
     def __check_priority_order_ready_queue(self, ea_job):
 
         self.ready_queue.append(ea_job)
         # sorted according to relative time & arrived time of task
-        self.ready_queue = sorted(self.ready_queue, key= lambda x: [(x.absolute_deadline - self.current_time - x.task.execution_time), x.arrived_time])
+        self.ready_queue = sorted(self.ready_queue, key= lambda x: [(x.absolute_deadline - x.remain_execution_time - x.task.execution_time), x.arrived_time])
     
     def dashboard(self):
 
