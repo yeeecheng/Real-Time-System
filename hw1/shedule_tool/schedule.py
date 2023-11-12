@@ -39,10 +39,6 @@ class schedule:
             self.current_exec_job = self.get_current_high_priority_job()
             self.ready_queue.pop(0)
 
-            # check whether the first time into execution phase
-            # if self.current_exec_job.release_time == None:
-            #     self.current_exec_job.set_job(release_time= self.current_time)
-
             # check whether there is enough time to execute
             if (self.current_exec_job.absolute_deadline - self.current_time - self.current_exec_job.remain_execution_time) < 0:
                 self.record_schedule.append([self.current_time, f"T{self.current_exec_job.task.tid} Missing schedule"])

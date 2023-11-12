@@ -25,14 +25,14 @@ class simulation:
                     execution_time= execution_time.strip(), tid= tid)
                 self.all_tasks.append(ea_task)
                 tid += 1
-        
+        for tt in self.all_tasks:
+            print(tt.phase_time, tt.period, tt.relative_deadline, tt.execution_time)
         self.__get_lcd_task_period()
         self.__get_max_phase_time()
         self.all_tasks_phase_time = [ea_task.phase_time for ea_task in self.all_tasks]
         self.all_tasks_period = [ea_task.period for ea_task in self.all_tasks]
 
     def check_schedulability(self):
-        print(self.schedule_tool)
         return self.schedule_tool.schedulability_test(all_tasks = self.all_tasks)
     
     def __gcd(self, a, b):
@@ -65,9 +65,10 @@ class simulation:
             # update current_time to schedule tool
             self.schedule_tool.update_time(current_time = clock)
             for idx in range(len(self.all_tasks)):
+                if clock < self.all_tasks_phase_time[idx]:
+                    continue
                 if (clock - self.all_tasks_phase_time[idx]) % self.all_tasks_period[idx] == 0:
                     self.schedule_tool.get_new_task(task = self.all_tasks[idx])
-
 
             self.schedule_tool.check_preemptive_job()
             self.schedule_tool.check_execution_phase()
@@ -83,9 +84,9 @@ if __name__ == "__main__":
     file_path = "./hw1/testcase"
     run = [[ RM(), "RM"], [EDF(), "EDF"], [strictSLT(), "strictSLT"]]
     for file in os.listdir(file_path):
-        # file = "test1.txt"
+        # file = "test6.txt"
         for schedule, file_name in run:
-            # schedule = EDF()
+            # schedule = strictSLT()
             simulator = simulation(file_path= file_path + "/"  + file, schedule_tool= schedule)
             
             if simulator.check_schedulability():

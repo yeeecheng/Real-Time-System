@@ -30,8 +30,8 @@ class strictSLT(schedule):
     def dashboard(self):
 
         print(f"current time: {self.current_time}")
-        print(f"total job num: {self.total_job_num}")
-        print(f"miss deadline job num: {self.miss_deadline_job}")
+        # print(f"total job num: {self.total_job_num}")
+        # print(f"miss deadline job num: {self.miss_deadline_job}")
         print(f"\nReady queue:")
         for idx, ea_job in enumerate(self.ready_queue):
             print(f"{idx}. tid: {ea_job.task.tid}, arrived_time: {ea_job.arrived_time}, slack: {(ea_job.absolute_deadline - self.current_time - ea_job.remain_execution_time)}")
