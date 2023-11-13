@@ -34,8 +34,7 @@
 34 T2
 35 T2
 36 T2
-37 T1 Missing schedule
-37 no job
+37 no job (T1 miss deadline)
 38 no job
 39 no job
 40 no job
@@ -80,8 +79,7 @@
 79 T2
 80 T2
 81 T2
-82 T1 Missing schedule
-82 no job
+82 no job (T1 miss deadline)
 83 no job
 84 no job
 85 no job

@@ -41,7 +41,11 @@ class schedule:
 
             # check whether there is enough time to execute
             if (self.current_exec_job.absolute_deadline - self.current_time - self.current_exec_job.remain_execution_time) < 0:
-                self.record_schedule.append([self.current_time, f"T{self.current_exec_job.task.tid} Missing schedule"])
+                if len(self.record_schedule) != 0 and self.record_schedule[-1][0] == self.current_time:
+                    print(self.record_schedule[-1])
+                    self.record_schedule[-1].append(f"T{self.current_exec_job.task.tid} miss deadline")
+                else:
+                    self.record_schedule.append([self.current_time, f"T{self.current_exec_job.task.tid} miss deadline"])
                 self.miss_deadline_job += 1
                 del self.current_exec_job
                 self.check_execution_phase()
@@ -99,7 +103,10 @@ class schedule:
             utilized_rate += task.execution_time / min(task.period, task.relative_deadline)
         
         n = len(all_tasks)
-        return utilized_rate <= n * pow(2, 1 / n) - 1
+        res = utilized_rate <= n * (pow(2, 1 / n) - 1)
+        if not res:
+            self.record_schedule.append("May not schedule")
+        return res
     
     def dashboard(self):
 
@@ -116,18 +123,35 @@ class schedule:
             print(f"release_time: {cur_exec_job.release_time}", end =", ")
             print(f"absolute_deadline: {cur_exec_job.absolute_deadline}", end =", ")
             print(f"remain_execute_time: {cur_exec_job.remain_execution_time}")
-            self.record_schedule.append([self.current_time, f"T{cur_exec_job.task.tid}"])
+            if len(self.record_schedule) != 0 and self.record_schedule[-1][0] == self.current_time:
+                self.record_schedule[-1].insert(1, f"T{cur_exec_job.task.tid}")
+            else:
+                self.record_schedule.append([self.current_time, f"T{cur_exec_job.task.tid}"])
         except:
             print("no job executing")
-            self.record_schedule.append([self.current_time, "no job"])
+            if len(self.record_schedule) != 0 and self.record_schedule[-1][0] == self.current_time:
+                self.record_schedule[-1].insert(1, "no job")
+            else:
+                self.record_schedule.append([self.current_time, "no job"])
         print("\n")
         
 
     def print_record(self, save_path = None):
         data = ""
         for record in self.record_schedule:
-            print(f"{record[0]} {record[1]}")
-            data += f"{record[0]} {record[1]}\n"
+            if len(record) == 1:
+                print(f"{record[0]}")
+                data += f"{record[0]}\n"
+            elif len(record) != 2:
+                miss_deadline_info = ""
+                for idx in range(2, len(record)):
+                    miss_deadline_info += record[idx] + ", "
+                miss_deadline_info = miss_deadline_info.strip(", ")
+                print(f"{record[0]} {record[1]} ({miss_deadline_info})")
+                data += f"{record[0]} {record[1]} ({miss_deadline_info})\n"
+            else:
+                print(f"{record[0]} {record[1]}")
+                data += f"{record[0]} {record[1]}\n"
 
         with open(save_path, "w", encoding= "utf-8") as f:
             f.write(data)

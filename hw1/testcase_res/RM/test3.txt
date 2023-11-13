@@ -1,3 +1,4 @@
+May not schedule
 1 no job
 2 no job
 3 no job
@@ -60,8 +61,7 @@
 60 T1
 61 T1
 62 T1
-63 T3 Missing schedule
-63 no job
+63 no job (T3 miss deadline)
 64 no job
 65 no job
 66 T2

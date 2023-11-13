@@ -88,7 +88,7 @@ May not schedule
 87 T2
 88 T2
 89 T2
-90 T1
+90 T2
 91 T1
 92 T1
 93 T1
@@ -97,7 +97,7 @@ May not schedule
 96 T1
 97 T1
 98 T1
-99 no job (T2 miss deadline)
+99 T1
 100 no job
 101 no job
 102 no job

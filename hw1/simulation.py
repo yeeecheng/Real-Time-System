@@ -65,6 +65,7 @@ class simulation:
             # update current_time to schedule tool
             self.schedule_tool.update_time(current_time = clock)
             for idx in range(len(self.all_tasks)):
+                # if clock smaller than phase time, there is not job. 
                 if clock < self.all_tasks_phase_time[idx]:
                     continue
                 if (clock - self.all_tasks_phase_time[idx]) % self.all_tasks_period[idx] == 0:
@@ -86,11 +87,11 @@ if __name__ == "__main__":
     for file in os.listdir(file_path):
         # file = "test6.txt"
         for schedule, file_name in run:
-            # schedule = strictSLT()
+            # schedule = RM()
             simulator = simulation(file_path= file_path + "/"  + file, schedule_tool= schedule)
             
-            if simulator.check_schedulability():
-                simulator.simulate()
-                simulator.print_record(save_path= f"./hw1/testcase_res/{file_name}/{file}")
+            simulator.check_schedulability()
+            simulator.simulate()
+            simulator.print_record(save_path= f"./hw1/testcase_res/{file_name}/{file}")
             
     

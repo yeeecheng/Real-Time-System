@@ -21,11 +21,9 @@
 21 T3
 22 T3
 23 T3
-24 T2 Missing schedule
-24 T1 Missing schedule
-24 no job
+24 no job (T2 miss deadline, T1 miss deadline)
 25 T1
-26 T2
+26 T1
 27 T2
-28 T1
+28 T2
 29 T2
