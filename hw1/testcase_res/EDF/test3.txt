@@ -1,4 +1,4 @@
-May not schedule
+May not schedule by EDF
 0 no job
 1 no job
 2 no job
@@ -147,3 +147,6 @@ May not schedule
 145 T1
 146 T1
 147 T2
+
+total job num: 43
+miss deadline job num: 0

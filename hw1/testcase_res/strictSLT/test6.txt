@@ -28,3 +28,6 @@
 27 T2
 28 T2
 29 T2
+
+total job num: 13
+miss deadline job num: 2

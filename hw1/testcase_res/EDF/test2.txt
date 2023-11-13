@@ -28,3 +28,6 @@
 27 no job
 28 T1
 29 no job
+
+total job num: 13
+miss deadline job num: 0

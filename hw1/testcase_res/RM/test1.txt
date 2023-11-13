@@ -22,3 +22,6 @@ May not schedule
 20 no job
 21 T1
 22 T2
+
+total job num: 12
+miss deadline job num: 0

@@ -89,8 +89,8 @@ if __name__ == "__main__":
         for schedule, file_name in run:
             # schedule = strictSLT()
             simulator = simulation(file_path= file_path + "/"  + file, schedule_tool= schedule)
-            
-            simulator.check_schedulability()
+            if file_name != "strictSLT":
+                simulator.check_schedulability()
             simulator.simulate()
             simulator.print_record(save_path= f"./hw1/testcase_res/{file_name}/{file}")
             

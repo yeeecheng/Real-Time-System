@@ -108,3 +108,6 @@
 107 T1
 108 T1
 109 T1
+
+total job num: 8
+miss deadline job num: 1

@@ -29,3 +29,6 @@ May not schedule
 27 T2
 28 T2
 29 T1
+
+total job num: 13
+miss deadline job num: 2

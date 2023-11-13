@@ -29,10 +29,6 @@ class strictSLT(schedule):
         # sorted according to relative time & arrived time of task
         self.ready_queue = sorted(self.ready_queue, key= lambda x: [(x.absolute_deadline - self.current_time - x.task.execution_time), x.task.tid])
 
-    def schedulability_test(self, all_tasks):
-        
-        res = True
-        return res
     
     def dashboard(self):
 

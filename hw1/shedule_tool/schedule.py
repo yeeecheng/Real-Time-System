@@ -110,7 +110,7 @@ class schedule:
         n = len(all_tasks)
         res = utilized_rate <= n * (pow(2, 1 / n) - 1)
         if not res:
-            self.record_schedule.append("May not schedule")
+            self.record_schedule.append(["May not schedule"])
         return res
     
     def dashboard(self):
@@ -142,6 +142,7 @@ class schedule:
         
 
     def print_record(self, save_path = None):
+        
         data = ""
         for record in self.record_schedule:
             if len(record) == 1:
@@ -157,6 +158,11 @@ class schedule:
             else:
                 print(f"{record[0]} {record[1]}")
                 data += f"{record[0]} {record[1]}\n"
+
+        print(f"\ntotal job num: {self.total_job_num}")
+        print(f"miss deadline job num: {self.miss_deadline_job}")
+        data += f"\ntotal job num: {self.total_job_num}\n"
+        data += f"miss deadline job num: {self.miss_deadline_job}\n"
 
         with open(save_path, "w", encoding= "utf-8") as f:
             f.write(data)

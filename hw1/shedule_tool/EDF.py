@@ -35,7 +35,7 @@ class EDF(schedule):
         
         res = utilized_rate <= 1
         if not res:
-            self.record_schedule.append(["May not schedule"])
+            self.record_schedule.append(["May not schedule by EDF"])
         return res
     
     def dashboard(self):
