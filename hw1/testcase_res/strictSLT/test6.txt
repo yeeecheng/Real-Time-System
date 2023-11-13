@@ -21,8 +21,8 @@
 20 T1
 21 T3
 22 T3
-23 T3
-24 no job (T2 miss deadline, T1 miss deadline)
+23 T3 (T2 miss deadline)
+24 no job (T1 miss deadline)
 25 T1
 26 T1
 27 T2

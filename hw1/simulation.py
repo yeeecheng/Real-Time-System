@@ -85,9 +85,9 @@ if __name__ == "__main__":
     file_path = "./hw1/testcase"
     run = [[ RM(), "RM"], [EDF(), "EDF"], [strictSLT(), "strictSLT"]]
     for file in os.listdir(file_path):
-        file = "test5.txt"
+        # file = "test5.txt"
         for schedule, file_name in run:
-            schedule = strictSLT()
+            # schedule = strictSLT()
             simulator = simulation(file_path= file_path + "/"  + file, schedule_tool= schedule)
             
             simulator.check_schedulability()

@@ -22,7 +22,7 @@ May not schedule
 20 T2
 21 T1
 22 T1
-23 T2
+23 T2 (T3 miss deadline)
 24 T2
 25 T1
 26 T1
