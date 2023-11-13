@@ -80,14 +80,13 @@ class simulation:
         self.schedule_tool.print_record(save_path = save_path)
 
 
-
 if __name__ == "__main__":
     file_path = "./hw1/testcase"
     run = [[ RM(), "RM"], [EDF(), "EDF"], [strictSLT(), "strictSLT"]]
     for file in os.listdir(file_path):
-        # file = "test5.txt"
+        file = "test6.txt"
         for schedule, file_name in run:
-            # schedule = strictSLT()
+            schedule = EDF()
             simulator = simulation(file_path= file_path + "/"  + file, schedule_tool= schedule)
             if file_name != "strictSLT":
                 simulator.check_schedulability()

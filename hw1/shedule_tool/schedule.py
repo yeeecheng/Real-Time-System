@@ -36,6 +36,7 @@ class schedule:
         miss_deadline_val = []
         for job in self.ready_queue:
             if (job.absolute_deadline - self.current_time - job.remain_execution_time) < 0:
+                print(job.task.tid, job.absolute_deadline, self.current_time, job.remain_execution_time)
                 print("miss")
                 if len(self.record_schedule) != 0 and self.record_schedule[-1][0] == self.current_time:
                     self.record_schedule[-1].append(f"T{job.task.tid} miss deadline")
