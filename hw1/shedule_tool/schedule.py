@@ -41,8 +41,8 @@ class schedule:
 
             # check whether there is enough time to execute
             if (self.current_exec_job.absolute_deadline - self.current_time - self.current_exec_job.remain_execution_time) < 0:
+                print("miss")
                 if len(self.record_schedule) != 0 and self.record_schedule[-1][0] == self.current_time:
-                    print(self.record_schedule[-1])
                     self.record_schedule[-1].append(f"T{self.current_exec_job.task.tid} miss deadline")
                 else:
                     self.record_schedule.append([self.current_time, f"T{self.current_exec_job.task.tid} miss deadline"])

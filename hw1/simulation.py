@@ -9,7 +9,7 @@ class simulation:
 
     def __init__(self, file_path, schedule_tool):
         self.__load_file(file_path= file_path)
-        self.clock_start_time = 1
+        self.clock_start_time = 0
         self.schedule_tool = schedule_tool
         self.schedule_tool.reset()
 
