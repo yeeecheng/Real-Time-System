@@ -1,0 +1,33 @@
+0 no job
+1 no job
+2 no job
+3 no job
+4 T1
+5 T2
+6 T2
+7 no job
+8 T1
+9 no job
+10 T2
+11 T2
+12 T1
+13 T3
+14 T3
+15 T2
+16 T1
+17 T2
+18 T3
+19 T3
+20 T1
+21 T2
+22 T2
+23 T3
+24 T1
+25 T2
+26 T2
+27 no job
+28 T1
+29 no job
+
+total job num: 13
+miss deadline job num: 0
