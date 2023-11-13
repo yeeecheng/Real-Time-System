@@ -31,6 +31,23 @@ class schedule:
         # still executing
         return True
 
+    def check_miss_deadline_job(self):
+        # check whether there is enough time to execute
+        miss_deadline_val = []
+        for job in self.ready_queue:
+            if (job.absolute_deadline - self.current_time - job.remain_execution_time) < 0:
+                print("miss")
+                if len(self.record_schedule) != 0 and self.record_schedule[-1][0] == self.current_time:
+                    self.record_schedule[-1].append(f"T{job.task.tid} miss deadline")
+                else:
+                    self.record_schedule.append([self.current_time, f"T{job.task.tid} miss deadline"])
+                self.miss_deadline_job += 1
+                
+                miss_deadline_val.append(job)
+        
+        for need_remove_job in miss_deadline_val:
+            self.ready_queue.remove(need_remove_job)
+
     def check_execution_phase(self):
         
         # no job is executing and there are job in the ready queue.
@@ -38,18 +55,6 @@ class schedule:
             
             self.current_exec_job = self.get_current_high_priority_job()
             self.ready_queue.pop(0)
-
-            # check whether there is enough time to execute
-            if (self.current_exec_job.absolute_deadline - self.current_time - self.current_exec_job.remain_execution_time) < 0:
-                print("miss")
-                if len(self.record_schedule) != 0 and self.record_schedule[-1][0] == self.current_time:
-                    self.record_schedule[-1].append(f"T{self.current_exec_job.task.tid} miss deadline")
-                else:
-                    self.record_schedule.append([self.current_time, f"T{self.current_exec_job.task.tid} miss deadline"])
-                self.miss_deadline_job += 1
-                del self.current_exec_job
-                self.check_execution_phase()
-                return 
             
             self.locker = True
         

@@ -75,12 +75,12 @@
 74 T2
 75 T2
 76 T2
-77 T2
+77 T2 (T1 miss deadline)
 78 T2
 79 T2
 80 T2
 81 T2
-82 no job (T1 miss deadline)
+82 no job
 83 no job
 84 no job
 85 no job

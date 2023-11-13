@@ -70,7 +70,7 @@ class simulation:
                     continue
                 if (clock - self.all_tasks_phase_time[idx]) % self.all_tasks_period[idx] == 0:
                     self.schedule_tool.get_new_task(task = self.all_tasks[idx])
-
+            self.schedule_tool.check_miss_deadline_job()
             self.schedule_tool.check_preemptive_job()
             self.schedule_tool.check_execution_phase()
 
@@ -85,9 +85,9 @@ if __name__ == "__main__":
     file_path = "./hw1/testcase"
     run = [[ RM(), "RM"], [EDF(), "EDF"], [strictSLT(), "strictSLT"]]
     for file in os.listdir(file_path):
-        # file = "test6.txt"
+        file = "test5.txt"
         for schedule, file_name in run:
-            # schedule = RM()
+            schedule = strictSLT()
             simulator = simulation(file_path= file_path + "/"  + file, schedule_tool= schedule)
             
             simulator.check_schedulability()

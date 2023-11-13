@@ -41,7 +41,7 @@ class strictSLT(schedule):
         # print(f"miss deadline job num: {self.miss_deadline_job}")
         print(f"\nReady queue:")
         for idx, ea_job in enumerate(self.ready_queue):
-            print(f"{idx}. tid: {ea_job.task.tid}, arrived_time: {ea_job.arrived_time}, slack: {(ea_job.absolute_deadline - self.current_time - ea_job.remain_execution_time)}")
+            print(f"{idx}. tid: {ea_job.task.tid}, absolute_deadline: {ea_job.absolute_deadline}, {self.current_time}, {ea_job.remain_execution_time} , slack: {(ea_job.absolute_deadline - self.current_time - ea_job.remain_execution_time)}")
         print("\ncurrent execution job: ", end ="")
         try:
             cur_exec_job = self.current_exec_job
