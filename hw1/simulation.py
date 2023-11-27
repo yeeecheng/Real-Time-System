@@ -81,7 +81,8 @@ class simulation:
 
 
 if __name__ == "__main__":
-    file_path = "./hw1/testcase"
+    case = "democase"
+    file_path = f"./hw1/{case}"
     run = [[ RM(), "RM"], [EDF(), "EDF"], [strictSLT(), "strictSLT"]]
     for file in os.listdir(file_path):
         # file = "test6.txt"
@@ -91,6 +92,6 @@ if __name__ == "__main__":
             if file_name != "strictSLT":
                 simulator.check_schedulability()
             simulator.simulate()
-            simulator.print_record(save_path= f"./hw1/testcase_res/{file_name}/{file}")
+            simulator.print_record(save_path= f"./hw1/{case}_res/{file_name}/{file}")
             
     

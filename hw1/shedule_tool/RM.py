@@ -36,7 +36,7 @@ class RM(schedule):
         n = len(all_tasks)
         res = utilized_rate <= n * (pow(2, 1 / n) - 1)
         if not res:
-            self.record_schedule.append(["May not schedule"])
+            self.record_schedule.append(["May not schedule by RM"])
         return res
 
     

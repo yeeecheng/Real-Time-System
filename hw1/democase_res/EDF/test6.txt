@@ -1,0 +1,24 @@
+May not schedule by EDF
+0 T1
+1 T1
+2 T2
+3 T2
+4 T2
+5 T1
+6 T1
+7 T2
+8 T2
+9 T2
+10 T1
+11 T1
+12 T2
+13 T2
+14 T2
+15 T2 (T1 miss deadline)
+16 T1 (T3 miss deadline)
+17 T1
+18 T2
+19 T2
+
+total job num: 10
+miss deadline job num: 2

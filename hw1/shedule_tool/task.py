@@ -24,7 +24,6 @@ class job:
         self.absolute_deadline = absolute_deadline
 
     def set_job(self, release_time):
-
         self.release_time = release_time
         self.absolute_deadline = self.release_time + self.task.relative_deadline
         self.remain_execution_time = self.task.execution_time

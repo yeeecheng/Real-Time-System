@@ -1,4 +1,4 @@
-May not schedule
+May not schedule by RM
 0 no job
 1 T1
 2 T2
