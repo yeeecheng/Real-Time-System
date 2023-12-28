@@ -999,5 +999,9 @@
 998 T4 
 999 No job
 1000 T1 
+missPjobNumber: 0
+totalPjobNumber: 703
+totalResponseTime: 10
+finishedAJobNumber: 3
 Miss Rate: 0.0
 Average Response Time: 3.3333333333333335

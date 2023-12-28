@@ -999,5 +999,9 @@
 998 T8 
 999 T8 
 1000 T8 
+missPjobNumber: 0
+totalPjobNumber: 233
+totalResponseTime: 10206
+finishedAJobNumber: 34
 Miss Rate: 0.0
 Average Response Time: 300.1764705882353

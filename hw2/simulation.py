@@ -88,11 +88,13 @@ class simulation:
 
 if __name__ == "__main__":
 
-    scheduler = "TBS"
-    test_file = "2"
-    simulator = simulation(
-        periodic_file_path = f"./hw2/testcase/{test_file}/periodic.txt",
-        aperiodic_file_path= f"./hw2/testcase/{test_file}/aperiodic.txt",
-        scheduler= scheduler
-    )
-    simulator.simulate(save_path= f"{scheduler}_{test_file}")
+    schedulers = ["TBS", "CUS"]
+    test_files = ["1", "2", "3"]
+    for scheduler in schedulers:
+        for test_file in test_files:
+            simulator = simulation(
+                periodic_file_path = f"./hw2/testcase/{test_file}/periodic.txt",
+                aperiodic_file_path= f"./hw2/testcase/{test_file}/aperiodic.txt",
+                scheduler= scheduler
+            )
+            simulator.simulate(save_path= f"{scheduler}_{test_file}")

@@ -999,5 +999,9 @@
 998 A35 
 999 A35 
 1000 A35 
+missPjobNumber: 0
+totalPjobNumber: 180
+totalResponseTime: 9154
+finishedAJobNumber: 34
 Miss Rate: 0.0
 Average Response Time: 269.2352941176471
