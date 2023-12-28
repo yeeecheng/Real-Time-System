@@ -1,0 +1,1003 @@
+0 T1 
+1 T2 
+2 T3 
+3 A1 
+4 T1 
+5 T2 
+6 T3 
+7 T4 
+8 T1 
+9 A2 
+10 T2 
+11 No job
+12 T1 
+13 A3 
+14 T3 
+15 T2 
+16 T1 
+17 T4 
+18 T3 
+19 No job
+20 T1 
+21 T2 
+22 No job
+23 No job
+24 T1 
+25 T2 
+26 T3 
+27 T4 
+28 T1 
+29 No job
+30 T2 
+31 T3 
+32 T1 
+33 No job
+34 No job
+35 T2 
+36 T1 
+37 T3 
+38 T4 
+39 No job
+40 T1 
+41 T2 
+42 T3 
+43 No job
+44 T1 
+45 T2 
+46 No job
+47 No job
+48 T1 
+49 T3 
+50 T2 
+51 T4 
+52 T1 
+53 No job
+54 T3 
+55 T2 
+56 T1 
+57 No job
+58 No job
+59 No job
+60 T1 
+61 T2 
+62 T3 
+63 T4 
+64 T1 
+65 T2 
+66 T3 
+67 No job
+68 T1 
+69 No job
+70 T2 
+71 No job
+72 T1 
+73 T3 
+74 T4 
+75 T2 
+76 T1 
+77 No job
+78 T3 
+79 No job
+80 T1 
+81 T2 
+82 No job
+83 No job
+84 T1 
+85 T2 
+86 T3 
+87 T4 
+88 T1 
+89 No job
+90 T2 
+91 T3 
+92 T1 
+93 No job
+94 No job
+95 T2 
+96 T1 
+97 T3 
+98 T4 
+99 No job
+100 T1 
+101 T2 
+102 T3 
+103 No job
+104 T1 
+105 T2 
+106 No job
+107 No job
+108 T1 
+109 T3 
+110 T2 
+111 T4 
+112 T1 
+113 No job
+114 T3 
+115 T2 
+116 T1 
+117 No job
+118 No job
+119 No job
+120 T1 
+121 T2 
+122 T3 
+123 T4 
+124 T1 
+125 T2 
+126 T3 
+127 No job
+128 T1 
+129 No job
+130 T2 
+131 No job
+132 T1 
+133 T3 
+134 T4 
+135 T2 
+136 T1 
+137 No job
+138 T3 
+139 No job
+140 T1 
+141 T2 
+142 No job
+143 No job
+144 T1 
+145 T2 
+146 T3 
+147 T4 
+148 T1 
+149 No job
+150 T2 
+151 T3 
+152 T1 
+153 No job
+154 No job
+155 T2 
+156 T1 
+157 T3 
+158 T4 
+159 No job
+160 T1 
+161 T2 
+162 T3 
+163 No job
+164 T1 
+165 T2 
+166 No job
+167 No job
+168 T1 
+169 T3 
+170 T2 
+171 T4 
+172 T1 
+173 No job
+174 T3 
+175 T2 
+176 T1 
+177 No job
+178 No job
+179 No job
+180 T1 
+181 T2 
+182 T3 
+183 T4 
+184 T1 
+185 T2 
+186 T3 
+187 No job
+188 T1 
+189 No job
+190 T2 
+191 No job
+192 T1 
+193 T3 
+194 T4 
+195 T2 
+196 T1 
+197 No job
+198 T3 
+199 No job
+200 T1 
+201 T2 
+202 No job
+203 No job
+204 T1 
+205 T2 
+206 T3 
+207 T4 
+208 T1 
+209 No job
+210 T2 
+211 T3 
+212 T1 
+213 No job
+214 No job
+215 T2 
+216 T1 
+217 T3 
+218 T4 
+219 No job
+220 T1 
+221 T2 
+222 T3 
+223 No job
+224 T1 
+225 T2 
+226 No job
+227 No job
+228 T1 
+229 T3 
+230 T2 
+231 T4 
+232 T1 
+233 No job
+234 T3 
+235 T2 
+236 T1 
+237 No job
+238 No job
+239 No job
+240 T1 
+241 T2 
+242 T3 
+243 T4 
+244 T1 
+245 T2 
+246 T3 
+247 No job
+248 T1 
+249 No job
+250 T2 
+251 No job
+252 T1 
+253 T3 
+254 T4 
+255 T2 
+256 T1 
+257 No job
+258 T3 
+259 No job
+260 T1 
+261 T2 
+262 No job
+263 No job
+264 T1 
+265 T2 
+266 T3 
+267 T4 
+268 T1 
+269 No job
+270 T2 
+271 T3 
+272 T1 
+273 No job
+274 No job
+275 T2 
+276 T1 
+277 T3 
+278 T4 
+279 No job
+280 T1 
+281 T2 
+282 T3 
+283 No job
+284 T1 
+285 T2 
+286 No job
+287 No job
+288 T1 
+289 T3 
+290 T2 
+291 T4 
+292 T1 
+293 No job
+294 T3 
+295 T2 
+296 T1 
+297 No job
+298 No job
+299 No job
+300 T1 
+301 T2 
+302 T3 
+303 T4 
+304 T1 
+305 T2 
+306 T3 
+307 No job
+308 T1 
+309 No job
+310 T2 
+311 No job
+312 T1 
+313 T3 
+314 T4 
+315 T2 
+316 T1 
+317 No job
+318 T3 
+319 No job
+320 T1 
+321 T2 
+322 No job
+323 No job
+324 T1 
+325 T2 
+326 T3 
+327 T4 
+328 T1 
+329 No job
+330 T2 
+331 T3 
+332 T1 
+333 No job
+334 No job
+335 T2 
+336 T1 
+337 T3 
+338 T4 
+339 No job
+340 T1 
+341 T2 
+342 T3 
+343 No job
+344 T1 
+345 T2 
+346 No job
+347 No job
+348 T1 
+349 T3 
+350 T2 
+351 T4 
+352 T1 
+353 No job
+354 T3 
+355 T2 
+356 T1 
+357 No job
+358 No job
+359 No job
+360 T1 
+361 T2 
+362 T3 
+363 T4 
+364 T1 
+365 T2 
+366 T3 
+367 No job
+368 T1 
+369 No job
+370 T2 
+371 No job
+372 T1 
+373 T3 
+374 T4 
+375 T2 
+376 T1 
+377 No job
+378 T3 
+379 No job
+380 T1 
+381 T2 
+382 No job
+383 No job
+384 T1 
+385 T2 
+386 T3 
+387 T4 
+388 T1 
+389 No job
+390 T2 
+391 T3 
+392 T1 
+393 No job
+394 No job
+395 T2 
+396 T1 
+397 T3 
+398 T4 
+399 No job
+400 T1 
+401 T2 
+402 T3 
+403 No job
+404 T1 
+405 T2 
+406 No job
+407 No job
+408 T1 
+409 T3 
+410 T2 
+411 T4 
+412 T1 
+413 No job
+414 T3 
+415 T2 
+416 T1 
+417 No job
+418 No job
+419 No job
+420 T1 
+421 T2 
+422 T3 
+423 T4 
+424 T1 
+425 T2 
+426 T3 
+427 No job
+428 T1 
+429 No job
+430 T2 
+431 No job
+432 T1 
+433 T3 
+434 T4 
+435 T2 
+436 T1 
+437 No job
+438 T3 
+439 No job
+440 T1 
+441 T2 
+442 No job
+443 No job
+444 T1 
+445 T2 
+446 T3 
+447 T4 
+448 T1 
+449 No job
+450 T2 
+451 T3 
+452 T1 
+453 No job
+454 No job
+455 T2 
+456 T1 
+457 T3 
+458 T4 
+459 No job
+460 T1 
+461 T2 
+462 T3 
+463 No job
+464 T1 
+465 T2 
+466 No job
+467 No job
+468 T1 
+469 T3 
+470 T2 
+471 T4 
+472 T1 
+473 No job
+474 T3 
+475 T2 
+476 T1 
+477 No job
+478 No job
+479 No job
+480 T1 
+481 T2 
+482 T3 
+483 T4 
+484 T1 
+485 T2 
+486 T3 
+487 No job
+488 T1 
+489 No job
+490 T2 
+491 No job
+492 T1 
+493 T3 
+494 T4 
+495 T2 
+496 T1 
+497 No job
+498 T3 
+499 No job
+500 T1 
+501 T2 
+502 No job
+503 No job
+504 T1 
+505 T2 
+506 T3 
+507 T4 
+508 T1 
+509 No job
+510 T2 
+511 T3 
+512 T1 
+513 No job
+514 No job
+515 T2 
+516 T1 
+517 T3 
+518 T4 
+519 No job
+520 T1 
+521 T2 
+522 T3 
+523 No job
+524 T1 
+525 T2 
+526 No job
+527 No job
+528 T1 
+529 T3 
+530 T2 
+531 T4 
+532 T1 
+533 No job
+534 T3 
+535 T2 
+536 T1 
+537 No job
+538 No job
+539 No job
+540 T1 
+541 T2 
+542 T3 
+543 T4 
+544 T1 
+545 T2 
+546 T3 
+547 No job
+548 T1 
+549 No job
+550 T2 
+551 No job
+552 T1 
+553 T3 
+554 T4 
+555 T2 
+556 T1 
+557 No job
+558 T3 
+559 No job
+560 T1 
+561 T2 
+562 No job
+563 No job
+564 T1 
+565 T2 
+566 T3 
+567 T4 
+568 T1 
+569 No job
+570 T2 
+571 T3 
+572 T1 
+573 No job
+574 No job
+575 T2 
+576 T1 
+577 T3 
+578 T4 
+579 No job
+580 T1 
+581 T2 
+582 T3 
+583 No job
+584 T1 
+585 T2 
+586 No job
+587 No job
+588 T1 
+589 T3 
+590 T2 
+591 T4 
+592 T1 
+593 No job
+594 T3 
+595 T2 
+596 T1 
+597 No job
+598 No job
+599 No job
+600 T1 
+601 T2 
+602 T3 
+603 T4 
+604 T1 
+605 T2 
+606 T3 
+607 No job
+608 T1 
+609 No job
+610 T2 
+611 No job
+612 T1 
+613 T3 
+614 T4 
+615 T2 
+616 T1 
+617 No job
+618 T3 
+619 No job
+620 T1 
+621 T2 
+622 No job
+623 No job
+624 T1 
+625 T2 
+626 T3 
+627 T4 
+628 T1 
+629 No job
+630 T2 
+631 T3 
+632 T1 
+633 No job
+634 No job
+635 T2 
+636 T1 
+637 T3 
+638 T4 
+639 No job
+640 T1 
+641 T2 
+642 T3 
+643 No job
+644 T1 
+645 T2 
+646 No job
+647 No job
+648 T1 
+649 T3 
+650 T2 
+651 T4 
+652 T1 
+653 No job
+654 T3 
+655 T2 
+656 T1 
+657 No job
+658 No job
+659 No job
+660 T1 
+661 T2 
+662 T3 
+663 T4 
+664 T1 
+665 T2 
+666 T3 
+667 No job
+668 T1 
+669 No job
+670 T2 
+671 No job
+672 T1 
+673 T3 
+674 T4 
+675 T2 
+676 T1 
+677 No job
+678 T3 
+679 No job
+680 T1 
+681 T2 
+682 No job
+683 No job
+684 T1 
+685 T2 
+686 T3 
+687 T4 
+688 T1 
+689 No job
+690 T2 
+691 T3 
+692 T1 
+693 No job
+694 No job
+695 T2 
+696 T1 
+697 T3 
+698 T4 
+699 No job
+700 T1 
+701 T2 
+702 T3 
+703 No job
+704 T1 
+705 T2 
+706 No job
+707 No job
+708 T1 
+709 T3 
+710 T2 
+711 T4 
+712 T1 
+713 No job
+714 T3 
+715 T2 
+716 T1 
+717 No job
+718 No job
+719 No job
+720 T1 
+721 T2 
+722 T3 
+723 T4 
+724 T1 
+725 T2 
+726 T3 
+727 No job
+728 T1 
+729 No job
+730 T2 
+731 No job
+732 T1 
+733 T3 
+734 T4 
+735 T2 
+736 T1 
+737 No job
+738 T3 
+739 No job
+740 T1 
+741 T2 
+742 No job
+743 No job
+744 T1 
+745 T2 
+746 T3 
+747 T4 
+748 T1 
+749 No job
+750 T2 
+751 T3 
+752 T1 
+753 No job
+754 No job
+755 T2 
+756 T1 
+757 T3 
+758 T4 
+759 No job
+760 T1 
+761 T2 
+762 T3 
+763 No job
+764 T1 
+765 T2 
+766 No job
+767 No job
+768 T1 
+769 T3 
+770 T2 
+771 T4 
+772 T1 
+773 No job
+774 T3 
+775 T2 
+776 T1 
+777 No job
+778 No job
+779 No job
+780 T1 
+781 T2 
+782 T3 
+783 T4 
+784 T1 
+785 T2 
+786 T3 
+787 No job
+788 T1 
+789 No job
+790 T2 
+791 No job
+792 T1 
+793 T3 
+794 T4 
+795 T2 
+796 T1 
+797 No job
+798 T3 
+799 No job
+800 T1 
+801 T2 
+802 No job
+803 No job
+804 T1 
+805 T2 
+806 T3 
+807 T4 
+808 T1 
+809 No job
+810 T2 
+811 T3 
+812 T1 
+813 No job
+814 No job
+815 T2 
+816 T1 
+817 T3 
+818 T4 
+819 No job
+820 T1 
+821 T2 
+822 T3 
+823 No job
+824 T1 
+825 T2 
+826 No job
+827 No job
+828 T1 
+829 T3 
+830 T2 
+831 T4 
+832 T1 
+833 No job
+834 T3 
+835 T2 
+836 T1 
+837 No job
+838 No job
+839 No job
+840 T1 
+841 T2 
+842 T3 
+843 T4 
+844 T1 
+845 T2 
+846 T3 
+847 No job
+848 T1 
+849 No job
+850 T2 
+851 No job
+852 T1 
+853 T3 
+854 T4 
+855 T2 
+856 T1 
+857 No job
+858 T3 
+859 No job
+860 T1 
+861 T2 
+862 No job
+863 No job
+864 T1 
+865 T2 
+866 T3 
+867 T4 
+868 T1 
+869 No job
+870 T2 
+871 T3 
+872 T1 
+873 No job
+874 No job
+875 T2 
+876 T1 
+877 T3 
+878 T4 
+879 No job
+880 T1 
+881 T2 
+882 T3 
+883 No job
+884 T1 
+885 T2 
+886 No job
+887 No job
+888 T1 
+889 T3 
+890 T2 
+891 T4 
+892 T1 
+893 No job
+894 T3 
+895 T2 
+896 T1 
+897 No job
+898 No job
+899 No job
+900 T1 
+901 T2 
+902 T3 
+903 T4 
+904 T1 
+905 T2 
+906 T3 
+907 No job
+908 T1 
+909 No job
+910 T2 
+911 No job
+912 T1 
+913 T3 
+914 T4 
+915 T2 
+916 T1 
+917 No job
+918 T3 
+919 No job
+920 T1 
+921 T2 
+922 No job
+923 No job
+924 T1 
+925 T2 
+926 T3 
+927 T4 
+928 T1 
+929 No job
+930 T2 
+931 T3 
+932 T1 
+933 No job
+934 No job
+935 T2 
+936 T1 
+937 T3 
+938 T4 
+939 No job
+940 T1 
+941 T2 
+942 T3 
+943 No job
+944 T1 
+945 T2 
+946 No job
+947 No job
+948 T1 
+949 T3 
+950 T2 
+951 T4 
+952 T1 
+953 No job
+954 T3 
+955 T2 
+956 T1 
+957 No job
+958 No job
+959 No job
+960 T1 
+961 T2 
+962 T3 
+963 T4 
+964 T1 
+965 T2 
+966 T3 
+967 No job
+968 T1 
+969 No job
+970 T2 
+971 No job
+972 T1 
+973 T3 
+974 T4 
+975 T2 
+976 T1 
+977 No job
+978 T3 
+979 No job
+980 T1 
+981 T2 
+982 No job
+983 No job
+984 T1 
+985 T2 
+986 T3 
+987 T4 
+988 T1 
+989 No job
+990 T2 
+991 T3 
+992 T1 
+993 No job
+994 No job
+995 T2 
+996 T1 
+997 T3 
+998 T4 
+999 No job
+1000 T1 
+Miss Rate: 0.0
+Average Response Time: 3.3333333333333335
