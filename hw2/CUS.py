@@ -24,7 +24,6 @@ class CUS:
         self.record = ""
 
         for periodic_job in periodic_jobs:
-            # print("!!!")
             self.totalPjobNumber += 1
             periodic_job.update_deadline(clock= self.clock)
             
@@ -46,7 +45,6 @@ class CUS:
 
         remove_miss_deadline_job = []
         for periodic_job in self.periodic_job_queue:
-            # print(periodic_job.deadline)
             if self.check_miss_deadline(periodic_job):
                 remove_miss_deadline_job.append(periodic_job)
             
@@ -58,7 +56,6 @@ class CUS:
         # There are aperiodic job and periodic job 
         if ready_periodic_job is not None and  ready_aperiodic_job is not None:
             # periodic job  work first
-    
             if ready_periodic_job.deadline < self.server.deadline:
                 ready_periodic_job.update_remained_exec_time()
                 self.record += f"{ready_periodic_job.tid} "
