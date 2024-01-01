@@ -9,7 +9,7 @@
 7 T4 
 8 T1 
 9 [Tid]A2 [Server Deadline]13.0, [Remained Exec]0
-[Response Time] 4(10 - 6) [Deadline] 18.0
+[Response Time] 4(10 - 6) [Deadline] 13.0
 10 T2 
 11 [Tid]A3 [Server Deadline]18.0, [Remained Exec]0
 [Response Time] 3(12 - 9) [Deadline] 18.0

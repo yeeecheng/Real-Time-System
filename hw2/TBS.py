@@ -51,7 +51,7 @@ class TBS(CUS):
                     self.finishedAJobNumber += 1
                     # clock need to add 1, because of current clock is start time, but we need completed time(end time)
                     self.totalResponseTime += (self.clock + 1 - ready_aperiodic_job.phase_time)
-                    self.record += f"\n[Response Time] {(self.clock + 1 - ready_aperiodic_job.phase_time)}({self.clock + 1} - {ready_aperiodic_job.phase_time}) [Deadline] {self.server.deadline}"
+                    self.record += f"\n[Response Time] {(self.clock + 1 - ready_aperiodic_job.phase_time)}({self.clock + 1} - {ready_aperiodic_job.phase_time}) [Deadline] {ready_aperiodic_job.deadline}"
 
         elif ready_periodic_job is not None and ready_aperiodic_job is None:
             ready_periodic_job.update_remained_exec_time()
@@ -65,7 +65,7 @@ class TBS(CUS):
                 self.finishedAJobNumber += 1
                 # clock need to add 1, because of current clock is start time, but we need completed time(end time)
                 self.totalResponseTime += (self.clock + 1 - ready_aperiodic_job.phase_time)
-                self.record += f"\n[Response Time] {(self.clock + 1 - ready_aperiodic_job.phase_time)}({self.clock + 1} - {ready_aperiodic_job.phase_time}) [Deadline] {self.server.deadline}"
+                self.record += f"\n[Response Time] {(self.clock + 1 - ready_aperiodic_job.phase_time)}({self.clock + 1} - {ready_aperiodic_job.phase_time}) [Deadline] {ready_aperiodic_job.deadline}"
 
         # print info
         self.record = "No job" if self.record == "" else self.record
@@ -98,6 +98,7 @@ class Server(Server):
                 self.deadline = max(self.clock, self.deadline) + exec_time / 0.2 if exec_time % 0.2 else exec_time // 0.2 + 1
                 self.es = exec_time
                 self.ready_aperiodic_job = aperiodic_job
+                self.ready_aperiodic_job.deadline = self.deadline
         # R3
         elif rule == 3:
             if not self.aperiodic_job_queue_is_empty():
@@ -106,4 +107,5 @@ class Server(Server):
                 self.deadline = self.deadline + exec_time / 0.2 if exec_time % 0.2 else exec_time // 0.2 + 1
                 self.es = exec_time
                 self.ready_aperiodic_job = aperiodic_job
+                self.ready_aperiodic_job.deadline = self.deadline
                 return True
