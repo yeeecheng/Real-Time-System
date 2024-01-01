@@ -15,6 +15,7 @@ class TBS(CUS):
         # Record
         self.record = ""
         self.all_record = ""
+    
     def work(self):
         
         """ update queue order"""
@@ -45,26 +46,26 @@ class TBS(CUS):
                 self.check_exec_time_over(job= ready_periodic_job)
             else:
                 ready_aperiodic_job.update_remained_exec_time()
-                self.record += f"{ready_aperiodic_job.tid} "
+                self.record += f"[Tid]{ready_aperiodic_job.tid} [Server Deadline]{self.server.deadline}, [Remained Exec]{ready_aperiodic_job.remained_exec_time}"
                 if not self.server.consumption():
                     self.finishedAJobNumber += 1
                     # clock need to add 1, because of current clock is start time, but we need completed time(end time)
                     self.totalResponseTime += (self.clock + 1 - ready_aperiodic_job.phase_time)
-        
+                    self.record += f"\n[Response Time] {(self.clock + 1 - ready_aperiodic_job.phase_time)}({self.clock + 1} - {ready_aperiodic_job.phase_time}) [Deadline] {self.server.deadline}"
+
         elif ready_periodic_job is not None and ready_aperiodic_job is None:
-            # print(self.clock, ready_periodic_job.tid, ready_periodic_job.deadline, ready_periodic_job.remained_exec_time)
             ready_periodic_job.update_remained_exec_time()
             self.record += f"{ready_periodic_job.tid} "
             self.check_exec_time_over(job= ready_periodic_job)
         
         elif ready_periodic_job is  None and ready_aperiodic_job is not None:
             ready_aperiodic_job.update_remained_exec_time()
-            self.record += f"{ready_aperiodic_job.tid} "
+            self.record += f"[Tid]{ready_aperiodic_job.tid} [Server Deadline]{self.server.deadline}, [Remained Exec]{ready_aperiodic_job.remained_exec_time}"
             if not self.server.consumption():
                 self.finishedAJobNumber += 1
                 # clock need to add 1, because of current clock is start time, but we need completed time(end time)
                 self.totalResponseTime += (self.clock + 1 - ready_aperiodic_job.phase_time)
-                
+                self.record += f"\n[Response Time] {(self.clock + 1 - ready_aperiodic_job.phase_time)}({self.clock + 1} - {ready_aperiodic_job.phase_time}) [Deadline] {self.server.deadline}"
 
         # print info
         self.record = "No job" if self.record == "" else self.record

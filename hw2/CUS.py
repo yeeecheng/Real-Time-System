@@ -62,11 +62,12 @@ class CUS:
                 self.check_exec_time_over(job= ready_periodic_job)
             else:
                 ready_aperiodic_job.update_remained_exec_time()
-                self.record += f"{ready_aperiodic_job.tid} "
+                self.record += f"[Tid]{ready_aperiodic_job.tid} [Server Deadline]{self.server.deadline}, [Remained Exec]{ready_aperiodic_job.remained_exec_time}"
                 if not self.server.consumption():
                     self.finishedAJobNumber += 1
                     # clock need to add 1, because of current clock is start time, but we need completed time(end time)
                     self.totalResponseTime += (self.clock + 1 - ready_aperiodic_job.phase_time)
+                    self.record += f"\n[Response Time] {(self.clock + 1 - ready_aperiodic_job.phase_time)}({self.clock + 1} - {ready_aperiodic_job.phase_time}) [Deadline] {self.server.deadline}"
         
         elif ready_periodic_job is not None and ready_aperiodic_job is None:
     
@@ -76,11 +77,12 @@ class CUS:
         
         elif ready_periodic_job is  None and ready_aperiodic_job is not None:
             ready_aperiodic_job.update_remained_exec_time()
-            self.record += f"{ready_aperiodic_job.tid} "
+            self.record += f"[Tid]{ready_aperiodic_job.tid} [Server Deadline]{self.server.deadline}, [Remained Exec]{ready_aperiodic_job.remained_exec_time}"
             if not self.server.consumption():
                 self.finishedAJobNumber += 1
                 # clock need to add 1, because of current clock is start time, but we need completed time(end time)
                 self.totalResponseTime += (self.clock + 1 - ready_aperiodic_job.phase_time)
+                self.record += f"\n[Response Time] {(self.clock + 1 - ready_aperiodic_job.phase_time)}({self.clock + 1} - {ready_aperiodic_job.phase_time}) [Deadline] {self.server.deadline}"
 
         # print info
         self.record = "No job" if self.record == "" else self.record
@@ -104,7 +106,7 @@ class CUS:
         
         if (job.deadline - self.clock - job.remained_exec_time) <= 0:
             self.missPjobNumber += 1
-            self.record += f"{job.tid} miss deadline "
+            self.record += f"[{job.tid} miss deadline, deadline: {job.deadline}]"
             return True
         return False
 
@@ -153,7 +155,6 @@ class Server:
     def aperiodic_job_queue_is_empty(self):
         return False if len(self.aperiodic_job_queue) else True
     
-
     def arriving_new_aperiodic_job(self, aperiodic_jobs):
         for aperiodic_job in aperiodic_jobs:
             self.aperiodic_job_queue.append(aperiodic_job)
@@ -173,7 +174,7 @@ class Server:
     
     """ update deadline and es """
     def replenishment(self, rule = 1)->bool:
-
+        
         if rule == 2:
             if len(self.aperiodic_job_queue) == 1 and self.ready_aperiodic_job == None:
                 if self.clock >= self.deadline:

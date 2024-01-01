@@ -1,15 +1,18 @@
 0 T1 
 1 T2 
 2 T3 
-3 A1 
+3 [Tid]A1 [Server Deadline]8.0, [Remained Exec]0
+[Response Time] 1(4 - 3) [Deadline] 8.0
 4 T1 
 5 T2 
 6 T3 
 7 T4 
 8 T1 
-9 A2 
+9 [Tid]A2 [Server Deadline]13.0, [Remained Exec]0
+[Response Time] 4(10 - 6) [Deadline] 18.0
 10 T2 
-11 A3 
+11 [Tid]A3 [Server Deadline]18.0, [Remained Exec]0
+[Response Time] 3(12 - 9) [Deadline] 18.0
 12 T1 
 13 T3 
 14 T4 
